@@ -1,0 +1,59 @@
+/* Apply styles to form elements */
+form {
+  margin: 0 auto; /* Center the form horizontally */
+  max-width: 400px; /* Set a maximum width for the form */
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
+
+h2 {
+  text-align: center;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="password"],
+textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box; /* Ensure padding and border are included in width */
+}
+
+.radio-group {
+  display: flex; /* Use flexbox to display radio buttons and labels in a row */
+  align-items: center; /* Align items vertically */
+}
+
+.radio-group label {
+  margin-right: 10px; /* Add margin between radio button and its label */
+}
+
+input[type="radio"] {
+  margin-right: 5px;
+}
+
+input[type="submit"] {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover {
+  background-color: #007bff;
+}

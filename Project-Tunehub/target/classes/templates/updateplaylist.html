@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Update Playlist</title>
+</head>
+
+<body>
+    <h2>Update Playlist</h2>
+    <form action="/updateplaylist" method="post">
+        <input type="hidden" name="id" value="${playlist.id}"> <!-- Include playlist ID -->
+        
+        <label>Playlist Name:</label>
+        <input type="text" name="name" value="${playlist.name}"> <!-- Display current playlist name -->
+        <br><br>
+        
+        <label>Songs:</label>
+        <br>
+        <div th:each="song : ${songs}">
+            <input type="checkbox" name="songs" value="${song.id}" 
+                   <!-- Check if song is already in the playlist -->
+                   th:checked="${playlist.songs.contains(song)}">
+            <label th:text="${song.name}"></label>
+            <br>
+        </div>
+        <br>
+        
+        <input type="submit" value="Update Playlist">
+    </form>
+</body>
+</html>

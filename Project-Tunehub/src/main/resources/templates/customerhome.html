@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Customer Home</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/customerhome.css}">
+<link rel="stylesheet" type="text/css" th:href="@{/displaysongs.css}">
+  </head>
+
+  <body>
+	 
+   <p>Customer page</p>
+   <br>
+   
+   <!--<form action="playsongs">
+	   <input type="submit" value="PLAY SONGS">
+   </form>-->
+   
+   <div th:unless="${ispremium}" class="non-premium">
+	   <form action="pay">
+	   <input type="submit" value="GET PREMIUM">
+   </form><BR>
+   <form action="logout">
+	   <input type="submit" value="LOGOUT">
+   </form>
+   
+   </div>
+   <div th:if="${ispremium}"  class="premium">
+	   <table border="1px">
+		<thead>
+			<tr>
+
+				<th>Name</th>
+				<th>Artist</th>
+				<th>Genre</th>
+				<th>Play</th>
+
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="s:${songs}">
+
+				<td th:text="${s.name}"></td>
+				<td th:text="${s.artist}"></td>
+				<td th:text="${s.genre}"></td>
+				<td>
+					<audio controls>
+						<source th:src="${s.link}"> 
+					</audio>
+					
+				</td>
+
+			</tr>
+
+		</tbody>
+	</table>
+	
+	<BR>
+   <form action="logout">
+	   <input type="submit" value="LOGOUT">
+   </form>
+   </div>
+  </body>
+</html>
